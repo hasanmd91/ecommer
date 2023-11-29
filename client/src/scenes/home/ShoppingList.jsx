@@ -34,13 +34,13 @@ const ShoppingList = () => {
   console.log(items);
 
   const topRatedItems = items.filter(
-    (item) => item.attributes.category === 'topRated'
+    (item) => item.attributes.categroy === 'topRated '
   );
   const newArrivalsItems = items.filter(
-    (item) => item.attributes.category === 'newArrivals'
+    (item) => item.attributes.categroy === 'newArrivals '
   );
   const bestSellersItems = items.filter(
-    (item) => item.attributes.category === 'bestSellers'
+    (item) => item.attributes.categroy === 'bestSellers'
   );
 
   return (
