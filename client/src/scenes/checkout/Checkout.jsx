@@ -9,7 +9,7 @@ import Shipping from './Shipping';
 import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe(
-  'pk_test_51LgU7yConHioZHhlAcZdfDAnV9643a7N1CMpxlKtzI1AUWLsRyrord79GYzZQ6m8RzVnVQaHsgbvN1qSpiDegoPi006QkO0Mlc'
+  'pk_test_51OIZP3DDOW9sBTSBfH8wu7ZnNNkPFOaMiLjlET2oQTrExmZwOjgDgxTkFNFfcmynlKyNSovjkSb0QKzoW1i4ONU000XsCkGCrL'
 );
 
 const Checkout = () => {
@@ -38,8 +38,12 @@ const Checkout = () => {
 
   async function makePayment(values) {
     const stripe = await stripePromise;
+
     const requestBody = {
-      userName: [values.firstName, values.lastName].join(' '),
+      userName: [
+        values.billingAddress.firstName,
+        values.billingAddress.lastName,
+      ].join(' '),
       email: values.email,
       products: cart.map(({ id, count }) => ({
         id,
@@ -52,7 +56,9 @@ const Checkout = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(requestBody),
     });
+
     const session = await response.json();
+    console.log('this is the session', session);
     await stripe.redirectToCheckout({
       sessionId: session.id,
     });
