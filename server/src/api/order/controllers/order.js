@@ -1,7 +1,5 @@
 "use strict";
-const stripe = require("stripe")(
-  "sk_test_51OIZP3DDOW9sBTSBOQ5NBbRkQKnM21Ecs1wDoQc95g3dtiEeo9tLonBbEEmRO3UG60guBTtAHxcR9V7nMfrKttoL00GHJBjI5H"
-);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 /**
  * order controller
@@ -39,7 +37,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         customer_email: email,
         mode: "payment",
         success_url: "http://localhost:3000/checkout/success",
-        cancel_url: "http://localhost:1337",
+        cancel_url: "https://ecommer-ysd8.onrender.com",
         line_items: lineItems,
       });
 
