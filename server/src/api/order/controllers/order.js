@@ -26,7 +26,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
               product_data: {
                 name: item.name,
               },
-              unit_amount: item.price.toFixed(2),
+              unit_amount: Number(item.price.toFixed(2)),
             },
             quantity: product.count,
           };
@@ -38,8 +38,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         payment_method_types: ["card"],
         customer_email: email,
         mode: "payment",
-        success_url: "http://localhost:3000/checkout/success",
-        cancel_url: "https://ecommer-ktn9.onrender.com",
+        success_url: "https://ecommertshirts.netlify.app/checkout/success",
+        cancel_url: "https://ecommertshirts.netlify.app/checkout/error",
         line_items: lineItems,
       });
 
