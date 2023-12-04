@@ -18,8 +18,6 @@ const Item = ({ item, width }) => {
 
   const { category, price, name, image } = item.attributes;
 
-  console.log(image.data[0].attributes.formats.small.url);
-
   const {
     attributes: {
       formats: {

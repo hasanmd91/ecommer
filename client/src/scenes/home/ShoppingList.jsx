@@ -31,7 +31,6 @@ const ShoppingList = () => {
     getItems();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  console.log(items);
 
   const topRatedItems = items.filter(
     (item) => item.attributes.category === 'topRated'
