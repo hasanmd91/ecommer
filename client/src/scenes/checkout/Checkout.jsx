@@ -39,8 +39,6 @@ const Checkout = () => {
   async function makePayment(values) {
     const stripe = await stripePromise;
 
-    console.log('this is the values', values);
-
     const requestBody = {
       userName: [
         values.billingAddress.firstName,
@@ -53,7 +51,6 @@ const Checkout = () => {
       })),
     };
 
-    console.log(requestBody);
     const response = await fetch(
       'https://ecommer-ktn9.onrender.com/api/orders',
       {
