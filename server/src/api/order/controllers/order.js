@@ -1,4 +1,5 @@
 "use strict";
+// @ts-ignore
 const stripe = require("stripe")(process.env.STRIPE_SECRET_TOKEN);
 
 /**
@@ -9,7 +10,7 @@ const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
-    const { products, userName, email } = ctx.request.body;
+    const { products, userName, email } = JSON.parse(ctx.request.body);
     try {
       // retrieve item information
       const lineItems = await Promise.all(
