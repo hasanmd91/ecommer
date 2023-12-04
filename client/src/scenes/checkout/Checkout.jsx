@@ -52,7 +52,7 @@ const Checkout = () => {
     };
 
     const response = await fetch(
-      'https://ecommer-ysd8.onrender.com/api/orders',
+      'https://ecommer-ktn9.onrender.com/api/orders',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

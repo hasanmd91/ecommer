@@ -25,7 +25,7 @@ const ItemDetails = () => {
 
   async function getItem() {
     const item = await fetch(
-      `https://ecommer-ysd8.onrender.com/api/items/${itemId}?populate=image`,
+      `https://ecommer-ktn9.onrender.com/api/items/${itemId}?populate=image`,
       {
         method: 'GET',
       }
@@ -36,7 +36,7 @@ const ItemDetails = () => {
 
   async function getItems() {
     const items = await fetch(
-      `https://ecommer-ysd8.onrender.com/api/items?populate=image`,
+      `https://ecommer-ktn9.onrender.com/api/items?populate=image`,
       {
         method: 'GET',
       }
@@ -62,11 +62,12 @@ const ItemDetails = () => {
             alt={item?.name}
             width="100%"
             height="100%"
-            src={`https://ecommer-ysd8.onrender.com${item?.attributes?.image?.data?.attributes?.formats?.small?.url}`}
+            src={
+              item?.attributes?.image?.data[0]?.attributes?.formats?.small?.url
+            }
             style={{ objectFit: 'contain' }}
           />
         </Box>
-
         {/* ACTIONS */}
         <Box flex="1 1 50%" mb="40px">
           <Box display="flex" justifyContent="space-between">
@@ -116,7 +117,7 @@ const ItemDetails = () => {
               <FavoriteBorderOutlinedIcon />
               <Typography sx={{ ml: '5px' }}>ADD TO WISHLIST</Typography>
             </Box>
-            <Typography>CATEGORIES: {item?.attributes?.categroy}</Typography>
+            <Typography>CATEGORIES: {item?.attributes?.category}</Typography>
           </Box>
         </Box>
       </Box>

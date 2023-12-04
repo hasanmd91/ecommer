@@ -38,7 +38,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         customer_email: email,
         mode: "payment",
         success_url: "http://localhost:3000/checkout/success",
-        cancel_url: "https://ecommer-ysd8.onrender.com",
+        cancel_url: "https://ecommer-ktn9.onrender.com",
         line_items: lineItems,
       });
 

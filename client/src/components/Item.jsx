@@ -16,16 +16,17 @@ const Item = ({ item, width }) => {
     palette: { neutral },
   } = useTheme();
 
-  const { categroy, price, name, image } = item.attributes;
+  const { category, price, name, image } = item.attributes;
+
+  console.log(image.data[0].attributes.formats.small.url);
+
   const {
-    data: {
-      attributes: {
-        formats: {
-          small: { url },
-        },
+    attributes: {
+      formats: {
+        small: { url },
       },
     },
-  } = image;
+  } = image.data[0];
 
   return (
     <Box width={width}>
@@ -38,7 +39,7 @@ const Item = ({ item, width }) => {
           alt={item.name}
           width="300px"
           height="400px"
-          src={`https://ecommer-ysd8.onrender.com${url}`}
+          src={url}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: 'pointer' }}
         />
@@ -79,7 +80,7 @@ const Item = ({ item, width }) => {
 
       <Box mt="3px">
         <Typography variant="subtitle2" color={neutral.dark}>
-          {categroy
+          {category
             .replace(/([A-Z])/g, '$1')
             .replace(/^./, (str) => str.toUpperCase())}
         </Typography>
