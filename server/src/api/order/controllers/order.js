@@ -38,8 +38,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         payment_method_types: ["card"],
         customer_email: email,
         mode: "payment",
-        success_url: "checkout/success",
-        cancel_url: "checkout/error",
+        success_url: "https://ecommertshirts.netlify.app/checkout/success",
+        cancel_url: "https://ecommertshirts.netlify.app/checkout/error",
         line_items: lineItems,
       });
 
