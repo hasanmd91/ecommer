@@ -1,161 +1,195 @@
 # Front-end Project
 
-![React](https://img.shields.io/badge/React-v.18-blue)
-![Redux toolkit](https://img.shields.io/badge/RTK-v.1-purple)
-![TypeScript](https://img.shields.io/badge/TypeScript-v.4-green)
-![SASS](https://img.shields.io/badge/SASS-v.1-hotpink)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Strapi](https://img.shields.io/badge/strapi-%232E7EEA.svg?style=for-the-badge&logo=strapi&logoColor=white)
+![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
 
 # Introduction
 
-Welcome to the ILH Store E-commerce Application, a online shopping platform, and a front-end project by Integify Assignment. Developed using React, Redux, and Material UI, our application offers user registration and login features, along with admin functionality and advanced product filtering thunks.
+Welcome to our online shopping platform, the Ecommer T-shirts E-commerce Application! This full-stack project is developed using cutting-edge technologies including React, Redux, and Material UI for the front end, and a robust Strapi back end server integrated with Stripe payment method for secure transactions.
 
-## Table of content
-
-- [Technologies](#technologies)
-- [Deployment](#deployment)
-- [Api Reference](#api-reference)
-- [Folder Structure](#folder-structure)
-- [Screenshots](#screenshots)
-
-## Technologies
+## Technologies Frontend
 
 | **Category**                         | **Libraries and Tools**                                       |
 | ------------------------------------ | ------------------------------------------------------------- |
 | **Frontend Framework and Libraries** | JavaScript, React, React Router, React Slick, React Hook Form |
 | **State Management**                 | Redux Toolkit, React-Redux, Redux-persist                     |
 | **User Interface and Styling**       | Material UI, Material Icons                                   |
-| **HTTP Requests**                    | Axios                                                         |
 | **Form Validation**                  | Yup                                                           |
-| **Testing**                          | Jest, MSW (Mock Service Worker)                               |
+
+## Technologies Backend
+
+| **Category** | **Libraries and Tools** |
+| ------------ | ----------------------- |
+| **Strapi**   | JavaScript, Node        |
+| **Database** | Postgresql              |
+| **Payment**  | Straipe                 |
 
 ## Deployment
 
-Live Link : [https://ilhecom.netlify.app/](https://ilhecom.netlify.app/)
-
-**Demo Admin User**
-
-```
-"email": "admin@mail.com",
-"password": "admin123"
-
-```
-
-**Demo Customer User**
-
-```
-"email": "john@mail.com",
-"password": "changeme"
-
-```
-
-## Api Reference
-
-Platzi Fake Store API
-
-[https://fakeapi.platzi.com/](https://fakeapi.platzi.com/)
-
-## Usage
-
-In the project directory, you can run:
-
-### `npm install`
-
-Install all the dependencies
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Live Link : [https://ecommertshirts.netlify.app/](https://ecommertshirts.netlify.app/)
 
 ## Folder Structure
 
 ```
-├───public
-│   ├───assets
-│   └───projectImages
-└───src
-    ├───assets
-    ├───components
-    │   ├───AdminDataCard
-    │   ├───AdminProductDetails
-    │   ├───AdminSideBar
-    │   ├───AuthGuards
-    │   ├───Button
-    │   ├───Card
-    │   ├───CartCalculator
-    │   ├───CartIcon
-    │   ├───CartItem
-    │   ├───CenterContainer
-    │   ├───FilterBar
-    │   │   ├───CategoryFilter
-    │   │   ├───FilterByName
-    │   │   └───FilterByprice
-    │   ├───ImageSlider
-    │   ├───Info
-    │   ├───InputSearch
-    │   ├───InputSelect
-    │   ├───Link
-    │   ├───LoginForm
-    │   ├───Logo
-    │   ├───Modal
-    │   ├───Navbar
-    │   │   ├───HamburgerMenu
-    │   │   ├───NavigationBar
-    │   │   └───TooltipMenu
-    │   ├───NewProductForm
-    │   ├───Pagination
-    │   ├───ProfileComp
-    │   ├───TextField
-    │   └───UserRegisterForm
-    ├───hooks
-    ├───pages
-    ├───redux
-    │   ├───reducers
-    │   └───thunks
-    ├───test
-    │   ├───data
-    │   ├───reducers
-    │   └───server
-    ├───types
-    └───validation
+│   .gitignore
+│   README.md
+│
+├───client
+│   │   .env
+│   │   .gitignore
+│   │   package-lock.json
+│   │   package.json
+│   │   README.md
+│   │
+│   │
+│   ├───public
+│   │       favicon.ico
+│   │       index.html
+│   │       logo192.png
+│   │       logo512.png
+│   │       manifest.json
+│   │       robots.txt
+│   │       _redirects
+│   │
+│   └───src
+│       │   App.js
+│       │   index.css
+│       │   index.js
+│       │   theme.js
+│       │
+│       ├───components
+│       │       Item.jsx
+│       │
+│       ├───scenes
+│       │   ├───checkout
+│       │   │       AddressForm.jsx
+│       │   │       Checkout.jsx
+│       │   │       Confirmation.jsx
+│       │   │       Error.jsx
+│       │   │       Payment.jsx
+│       │   │       Shipping.jsx
+│       │   │
+│       │   ├───global
+│       │   │       CartMenu.jsx
+│       │   │       Footer.jsx
+│       │   │       Navbar.jsx
+│       │   │
+│       │   ├───home
+│       │   │       Home.jsx
+│       │   │       MainCarousel.jsx
+│       │   │       ShoppingList.jsx
+│       │   │       Subscribe.jsx
+│       │   │
+│       │   └───itemDetails
+│       │           ItemDetails.jsx
+│       │
+│       └───state
+│               index.js
+│
+└───server
+    │   .editorconfig
+    │   .env.example
+    │   .eslintignore
+    │   .eslintrc
+    │   .gitignore
+    │   .strapi-updater.json
+    │   favicon.png
+    │   jsconfig.json
+    │   package-lock.json
+    │   package.json
+    │   README.md
+    │
+    ├───.strapi
+    │   └───client
+    │           app.js
+    │           index.html
+    │
+    ├───config
+    │       admin.js
+    │       api.js
+    │       database.js
+    │       middlewares.js
+    │       plugins.js
+    │       server.js
+    │
+    ├───database
+    │   └───migrations
+    │           .gitkeep
+    │
+    ├───public
+    │   │   robots.txt
+    │   │
+    │   └───uploads
+    │           .gitkeep
+    │
+    ├───src
+    │   │   index.js
+    │   │
+    │   ├───admin
+    │   │       app.example.js
+    │   │       webpack.config.example.js
+    │   │
+    │   ├───api
+    │   │   │   .gitkeep
+    │   │   │
+    │   │   ├───item
+    │   │   │   ├───content-types
+    │   │   │   │   └───item
+    │   │   │   │           schema.json
+    │   │   │   │
+    │   │   │   ├───controllers
+    │   │   │   │       item.js
+    │   │   │   │
+    │   │   │   ├───routes
+    │   │   │   │       item.js
+    │   │   │   │
+    │   │   │   └───services
+    │   │   │           item.js
+    │   │   │
+    │   │   └───order
+    │   │       ├───content-types
+    │   │       │   └───order
+    │   │       │           schema.json
+    │   │       │
+    │   │       ├───controllers
+    │   │       │       order.js
+    │   │       │
+    │   │       ├───routes
+    │   │       │       order.js
+    │   │       │
+    │   │       └───services
+    │   │               order.js
+    │   │
+    │   └───extensions
+    │           .gitkeep
+    │
+    └───types
+        └───generated
+                components.d.ts
+                contentTypes.d.ts
 ```
 
 ## Features Done
 
-- [x] Fetch and display all and single products.
-- [x] Create at least 4 pages (products, profile, user, cart)
-- [x] Product reducer
-- [x] User reducer
-- [x] Cart reducer
-- [x] Adding and removing from the cart
-- [x] Login and authorization (admins can delete and update products)
-- [x] Routing and private pages
-- [x] Testing the reducers
-- [x] Rewrite the README, deploy the project, add the deployment link here and to the README.md
-- [x] Pagination when fetching and displaying.
+- [x] User-friendly Interface: Enjoy a sleek and intuitive interface designed with Material UI for a seamless shopping experience.
+- [x] Product Catalog: Browse through an extensive collection of trendy t-shirts available for purchase.
+- [x] Shopping Cart: Easily add and manage selected items before checkout.
+- [x] Secure Payments: Utilizing Stripe's secure payment gateway for safe and convenient transactions.
+- [x] Admin Dashboard (Strapi): Manage products, orders, and users efficiently through the Strapi back end.
 
 ## Screenshots
 
-![Home](public/projectImages/home.png)
-![Products](public/projectImages/products.png)
-![Product](public/projectImages/product.png)
-![cart](public/projectImages/cart.png)
-![admin](public/projectImages/admin.png)
-![customer](public/projectImages/customer.png)
+![Home](client\assets\readme_assets\home.png)
+![Shipping](client\assets\readme_assets\address.png)
+![Product](client\assets\readme_assets\product.png)
+![cart](client\assets\readme_assets\checkout.png)
 
 ## Credits and Acknowledgements
 
 - pIctures: https://www.pexels.com/
-- video: https://asos.com
